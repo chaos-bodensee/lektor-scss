@@ -1,4 +1,4 @@
-# make print compatible with python2
+#!/usr/bin/env python3
 from __future__ import print_function
 
 import os
@@ -10,16 +10,16 @@ from termcolor import colored
 import threading
 import time
 
-COMPILE_FLAG = "scsscompile"
+COMPILE_FLAG = "scss"
 
-class SCSScompilePlugin(Plugin):
-    name = u'Lektor SCSScompile'
-    description = u'SASS compiler for Lektor, thats based on libsass.'
+class scssPlugin(Plugin):
+    name = u'Lektor scss'
+    description = u'Lektor plugin to compile css out of sass - based on libsass'
 
     def __init__(self, *args, **kwargs):
         Plugin.__init__(self, *args, **kwargs)
         config = self.get_config()
-        self.source_dir = config.get('source_dir', 'asset_sources/scss/')
+        self.source_dir = config.get('source_dir', 'assets/scss/')
         self.output_dir = config.get('output_dir', 'assets/css/')
         self.output_style = config.get('output_style', 'compressed')
         self.source_comments = config.get('source_comments', 'False')
@@ -141,7 +141,7 @@ class SCSScompilePlugin(Plugin):
 
         root_scss = os.path.join(self.env.root_path, self.source_dir )
         output = os.path.join(self.env.root_path, self.output_dir )
-        config_file = os.path.join(self.env.root_path, 'configs/scsscompile.ini')
+        config_file = os.path.join(self.env.root_path, 'configs/scss.ini')
 
         # output path has to exist
         #os.makedirs(output, exist_ok=True) when python2 finally runs out

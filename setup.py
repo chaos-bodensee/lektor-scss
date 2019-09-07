@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import ast
 import io
 import re
@@ -7,27 +8,21 @@ from setuptools import setup, find_packages
 with io.open('README.md', 'rt', encoding="utf8") as f:
     readme = f.read()
 
-_description_re = re.compile(r'description\s+=\s+(?P<description>.*)')
-
-with open('lektor_scsscompile.py', 'rb') as f:
-    description = str(ast.literal_eval(_description_re.search(
-        f.read().decode('utf-8')).group(1)))
-
 setup(
-    author='maxbachmann',
-    author_email='kontakt@maxbachmann.de',
-    description=description,
+    author='L3D',
+    author_email='l3d@c3woc.de',
+    description='Lektor plugin to compile css out of sass - based on libsass',
     keywords='Lektor plugin',
     license='MIT',
     long_description=readme,
     long_description_content_type='text/markdown',
-    name='lektor-scsscompile',
+    name='lektor-scss',
     packages=find_packages(),
-    py_modules=['lektor_scsscompile'],
-    url='https://github.com/maxbachmann/lektor-SCSScompile',
-    version='1.2.4',
+    py_modules=['lektor_scss'],
+    url='https://github.com/chaos-bodensee/lektor-scss.git',
+    version='1.3.0',
     install_requires  =  [
-        "libsass", "termcolor",
+        "libsass==0.19.2", "termcolor",
     ],
     classifiers=[
         "Development Status :: 5 - Production/Stable",
@@ -39,7 +34,7 @@ setup(
     ],
     entry_points={
         'lektor.plugins': [
-            'scsscompile = lektor_scsscompile:SCSScompilePlugin',
+            'scss = lektor_scss:scssPlugin',
         ]
     }
 )
