@@ -1,6 +1,7 @@
  SCSS compiler for lektor
 =============================
 [![PyPI version](https://badge.fury.io/py/lektor-scss.svg)](https://badge.fury.io/py/lektor-scss)
+ [![Downloads](https://pepy.tech/badge/lektor-scss)](https://pepy.tech/project/lektor-scss) 
 
 SCSS compiler for [Lektor](https://getlektor.com) that compiles css from sass.
 
