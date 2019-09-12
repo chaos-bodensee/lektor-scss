@@ -26,13 +26,14 @@ lektor-scss = 1.3.0
 ```
  Usage
 ------
-To enable scsscompile, pass the ``scsscompile`` flag when starting the development
+To enable scsscompile, pass the ``scss`` flag when starting the development
 server or when running a build:
 ```bash
+# build and compile css from scss
 lektor build -f scss
-```
-```bash
-lektor build -f scss
+
+# edit site with new generated css
+lektor server -f scss
 ```
 
  Configuration
