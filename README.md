@@ -36,6 +36,16 @@ lektor build -f scss
 lektor server -f scss
 ```
 
+ Python3
+----------
+It is highly recomended to use this plugin with a python3 version of lektor.
+
+Since lektor support to be a python module it is possible to force this *(after lektor is installed eg. with ``pip3 install --user --upgrade lektor``)* with the following command:
+```bash
+# run a python3 lektor server with new generated css
+python3 -m lektor server -f scss
+```
+
  Configuration
 -------------
 The Plugin has the following settings you can adjust to your needs:
