@@ -22,7 +22,7 @@ lektor plugins add lektor-scss
 Or by hand, adding the plugin to the packages section in your lektorproject file::
 ```ini
 [packages]
-lektor-scss = 1.3.0
+lektor-scss = 1.3.3
 ```
  Usage
 ------
@@ -53,3 +53,5 @@ An example file with the default config can be found at ``configs/scsscompile.in
  Developement
 -------------
 To test and/or develope this plugin in your running lektor installation, simply put it in the ``packages/`` Folder and have a look at the [Lektor Doku](https://www.getlektor.com/docs/plugins/dev/)
+
+<!-- How to add to pypi: https://packaging.python.org/tutorials/packaging-projects/ -->
