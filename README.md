@@ -5,28 +5,28 @@
 
 SCSS compiler for [Lektor](https://getlektor.com) that compiles css from sass.
 
- How does it acutually work?
+ How does it actually work?
 ----------------------------
  + It uses [libsass](https://github.com/sass/libsass-python) 
- + It looks for ``.scss`` and ``.sass`` files *(ignores part files that begin with a underscore e.g. '_testfile.scss'), compiling them as part of the build process.*
+ + It looks for ``.scss`` and ``.sass`` files *(ignores part files that begin with a underscore e.g. '_testfile.scss') and compiles them as part of the build process.*
  + It only rebuilds the css when it's needed (file changed, a file it imports changed or the config changed).
- + When starting the the development server it watchs the files for changes in the background and rebuilds them when needed.
+ + When starting the the development server it watches the files for changes in the background and rebuilds them when needed.
 
  Installation
 -------------
-You can install the plugin with Lektor's installer::
+You can install the plugin with Lektor's installer:
 ```bash
 lektor plugins add lektor-scss
 ```
 
-Or by hand, adding the plugin to the packages section in your lektorproject file::
+Or by hand, adding the plugin to the packages section in your lektorproject file:
 ```ini
 [packages]
 lektor-scss = 1.3.3
 ```
  Usage
 ------
-To enable scsscompile, pass the ``scss`` flag when starting the development
+To enable the plugin, pass the ``scss`` flag when starting the development
 server or when running a build:
 ```bash
 # build and compile css from scss
@@ -38,9 +38,9 @@ lektor server -f scss
 
  Python3
 ----------
-It is highly recomended to use this plugin with a python3 version of lektor.
+It is highly recommended to use this plugin with a python3 version of lektor.
 
-Since lektor support to be a python module it is possible to force this *(after lektor is installed eg. with ``pip3 install --user --upgrade lektor``)* with the following command:
+Since lektor can be used as a python module it is possible to enforce this *(after lektor is installed eg. with ``pip3 install --user --upgrade lektor``)* with the following command:
 ```bash
 # run a python3 lektor server with new generated css
 python3 -m lektor server -f scss
@@ -58,10 +58,10 @@ The Plugin has the following settings you can adjust to your needs:
 |source_comments|False              | whether to add comments about source lines                                                       |
 |precision      |5                  | precision for numbers                                                                            |
 
-An example file with the default config can be found at ``configs/scsscompile.ini``
+An example file with the default config can be found at ``configs/scss.ini``. For every parameter that is not specified in the config file the default value is used by the plugin.
 
- Developement
+ Development
 -------------
-To test and/or develope this plugin in your running lektor installation, simply put it in the ``packages/`` Folder and have a look at the [Lektor Doku](https://www.getlektor.com/docs/plugins/dev/)
+To test and/or develop on this plugin in your running lektor installation, simply place it in the ``packages/`` Folder and have a look at the [Lektor Doku](https://www.getlektor.com/docs/plugins/dev/)
 
 <!-- How to add to pypi: https://packaging.python.org/tutorials/packaging-projects/ -->
