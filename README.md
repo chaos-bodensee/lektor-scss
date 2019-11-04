@@ -22,7 +22,7 @@ lektor plugins add lektor-scss
 Or by hand, adding the plugin to the packages section in your lektorproject file:
 ```ini
 [packages]
-lektor-scss = 1.3.5
+lektor-scss = 1.3.6
 ```
  Usage
 ------
