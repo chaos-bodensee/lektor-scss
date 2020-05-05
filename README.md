@@ -65,3 +65,4 @@ An example file with the default config can be found at ``configs/scss.ini``. Fo
 To test and/or develop on this plugin in your running lektor installation, simply place it in the ``packages/`` Folder and have a look at the [Lektor Doku](https://www.getlektor.com/docs/plugins/dev/)
 
 <!-- How to add to pypi: https://packaging.python.org/tutorials/packaging-projects/ -->
+<!-- Python RELEASEING moved to github action -->
