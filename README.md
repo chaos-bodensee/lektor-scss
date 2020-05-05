@@ -1,13 +1,13 @@
  SCSS compiler for lektor
 =============================
 [![PyPI version](https://badge.fury.io/py/lektor-scss.svg)](https://badge.fury.io/py/lektor-scss)
- [![Downloads](https://pepy.tech/badge/lektor-scss)](https://pepy.tech/project/lektor-scss) 
+ [![Downloads](https://pepy.tech/badge/lektor-scss)](https://pepy.tech/project/lektor-scss)
 
 SCSS compiler for [Lektor](https://getlektor.com) that compiles css from sass.
 
  How does it actually work?
 ----------------------------
- + It uses [libsass](https://github.com/sass/libsass-python) 
+ + It uses [libsass](https://github.com/sass/libsass-python)
  + It looks for ``.scss`` and ``.sass`` files *(ignores part files that begin with a underscore e.g. '_testfile.scss') and compiles them as part of the build process.*
  + It only rebuilds the css when it's needed (file changed, a file it imports changed or the config changed).
  + When starting the the development server it watches the files for changes in the background and rebuilds them when needed.
@@ -22,7 +22,7 @@ lektor plugins add lektor-scss
 Or by hand, adding the plugin to the packages section in your lektorproject file:
 ```ini
 [packages]
-lektor-scss = 1.3.6
+lektor-scss = 1.3.7
 ```
  Usage
 ------
