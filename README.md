@@ -2,6 +2,8 @@
 =============================
 [![PyPI version](https://badge.fury.io/py/lektor-scss.svg)](https://badge.fury.io/py/lektor-scss)
  [![Downloads](https://pepy.tech/badge/lektor-scss)](https://pepy.tech/project/lektor-scss)
+ ![Upload Python Package](https://github.com/chaos-bodensee/lektor-scss/workflows/Upload%20Python%20Package/badge.svg)
+ ![Linting Python package](https://github.com/chaos-bodensee/lektor-scss/workflows/Linting%20Python%20package/badge.svg)
 
 SCSS compiler for [Lektor](https://getlektor.com) that compiles css from sass.
 
@@ -22,7 +24,7 @@ lektor plugins add lektor-scss
 Or by hand, adding the plugin to the packages section in your lektorproject file:
 ```ini
 [packages]
-lektor-scss = 1.3.7
+lektor-scss = 1.3.8
 ```
  Usage
 ------
