@@ -20,7 +20,6 @@ class scssPlugin(Plugin):
     def __init__(self, *args, **kwargs):
         Plugin.__init__(self, *args, **kwargs)
         config = self.get_config()
-        
         self.source_dir = config.get('source_dir', 'assets/scss/')
         self.output_dir = config.get('output_dir', 'assets/css/')
         self.output_style = config.get('output_style', 'compressed')
@@ -93,7 +92,6 @@ class scssPlugin(Plugin):
                 break
         if not rebuild:
             return
-        print("include %s" % self.include_paths)
         result = sass.compile(
                 filename=target,
                 output_style=self.output_style,
