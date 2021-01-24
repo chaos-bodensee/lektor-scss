@@ -20,12 +20,22 @@ class scssPlugin(Plugin):
     def __init__(self, *args, **kwargs):
         Plugin.__init__(self, *args, **kwargs)
         config = self.get_config()
+        
         self.source_dir = config.get('source_dir', 'assets/scss/')
         self.output_dir = config.get('output_dir', 'assets/css/')
         self.output_style = config.get('output_style', 'compressed')
         self.source_comments = config.get('source_comments', 'False')
         self.precision = config.get('precision', '5')
         self.name_prefix = config.get('name_prefix', '')
+        self.include_paths = []
+        raw_include_paths = config.get('include_paths', '')
+        # convert a path expression with ',' as seperator symbol
+        include_path_list = list(filter(lambda el: len(el) > 0, raw_include_paths.split(',')))
+        for path in include_path_list:
+            if path.startswith('/'):
+                self.include_paths.append(path)
+            else:
+                self.include_paths.append(os.path.realpath(os.path.join(self.env.root_path, path)))
         self.watcher = None
         self.run_watcher = False
 
@@ -83,12 +93,13 @@ class scssPlugin(Plugin):
                 break
         if not rebuild:
             return
-
+        print("include %s" % self.include_paths)
         result = sass.compile(
                 filename=target,
                 output_style=self.output_style,
                 precision=int(self.precision),
-                source_comments=(self.source_comments.lower()=='true')
+                source_comments=(self.source_comments.lower()=='true'),
+                include_paths=self.include_paths
             )
         with open(output_file, 'w') as fw:
             fw.write(result)
