@@ -21,7 +21,7 @@ setup(
     packages=find_packages(),
     py_modules=['lektor_scss'],
     url='https://github.com/chaos-bodensee/lektor-scss.git',
-    version='1.3.9',
+    version='1.4.0',
     install_requires  =  [
         "libsass==0.20.1", "termcolor",
     ],

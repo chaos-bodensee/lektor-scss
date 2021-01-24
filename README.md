@@ -24,7 +24,7 @@ lektor plugins add lektor-scss
 Or by hand, adding the plugin to the packages section in your lektorproject file:
 ```ini
 [packages]
-lektor-scss = 1.3.9
+lektor-scss = 1.4.0
 ```
  Usage
 ------
@@ -59,6 +59,8 @@ The Plugin has the following settings you can adjust to your needs:
 |output_style   |compressed         | coding style of the compiled result. choose one of: 'nested', 'expanded', 'compact', 'compressed'|
 |source_comments|False              | whether to add comments about source lines                                                       |
 |precision      |5                  | precision for numbers                                                                            |
+|include_paths  |                   |If you want to include SASS libraries from a different directory, libsass's compile function has a parameter called `include_paths` to add those directories to the search path. |
+
 
 An example file with the default config can be found at ``configs/scss.ini``. For every parameter that is not specified in the config file the default value is used by the plugin.
 
@@ -68,3 +70,4 @@ To test and/or develop on this plugin in your running lektor installation, simpl
 
 <!-- How to add to pypi: https://packaging.python.org/tutorials/packaging-projects/ -->
 <!-- Python RELEASEING moved to github action -->
+<!-- You have to edit the version number in README and setup.py manually -->
