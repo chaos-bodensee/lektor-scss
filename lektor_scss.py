@@ -48,14 +48,14 @@ class scssPlugin(Plugin):
             imports = re.findall(r'@import\s+((?:[\'|\"]\S+[\'|\"]\s*(?:,\s*(?:\/\/\s*|)|;))+)', data)
             for files in imports:
                 files = re.sub('[\'\"\n\r;]', '', files)
-                
+
                 # find correct filename and add to watchlist (recursive so dependencies of dependencies get added aswell)
                 for file in files.split(","):
                     file = file.strip()
                     # when filename ends with css libsass converts it to a url()
                     if file.endswith('.css'):
                         continue
-                    
+
                     basepath = os.path.dirname(target)
                     filepath = os.path.dirname(file)
                     basename = os.path.basename(file)
@@ -101,9 +101,8 @@ class scssPlugin(Plugin):
             )
         with open(output_file, 'w') as fw:
             fw.write(result)
-        
+
         print(colored('css', 'green'), self.source_dir + os.path.basename(target), '\u27a1', self.output_dir + filename)
-        
 
     def find_files(self, destination):
         """
@@ -112,7 +111,7 @@ class scssPlugin(Plugin):
         for root, dirs, files in os.walk(destination):
             for f in files:
                 if (f.endswith('.scss') or f.endswith('.sass')) and not f.startswith('_'):
-                    yield os.path.join(root, f)            
+                    yield os.path.join(root, f)
 
     def thread(self, output, watch_files):
         while True:
@@ -130,8 +129,7 @@ class scssPlugin(Plugin):
         if self.watcher is not None:
             self.run_watcher = False
             print('stopped')
-        
-  
+
     def make_sure_path_exists(self, path):
         try:
             os.makedirs(path)
