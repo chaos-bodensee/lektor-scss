@@ -24,7 +24,7 @@ lektor plugins add lektor-scss
 Or by hand, adding the plugin to the packages section in your lektorproject file:
 ```ini
 [packages]
-lektor-scss = 1.4.2
+lektor-scss = 1.5.0
 ```
  Usage
 ------
@@ -60,6 +60,7 @@ The Plugin has the following settings you can adjust to your needs:
 |source_comments|False              | whether to add comments about source lines                                                       |
 |precision      |5                  | precision for numbers                                                                            |
 |include_paths  |                   |If you want to include SASS libraries from a different directory, libsass's compile function has a parameter called `include_paths` to add those directories to the search path. |
+|use_compile_flag|True              | If True the flag '-scss' is needed. Otherwise not. |
 
 
 An example file with the default config can be found at ``configs/scss.ini``. For every parameter that is not specified in the config file the default value is used by the plugin.

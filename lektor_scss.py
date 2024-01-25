@@ -20,6 +20,7 @@ class scssPlugin(Plugin):
     def __init__(self, *args, **kwargs):
         Plugin.__init__(self, *args, **kwargs)
         config = self.get_config()
+        self.use_compile_flag = config.get('use_compile_flag', 'True')
         self.source_dir = config.get('source_dir', 'assets/scss/')
         self.output_dir = config.get('output_dir', 'assets/css/')
         self.output_style = config.get('output_style', 'compressed')
@@ -39,7 +40,10 @@ class scssPlugin(Plugin):
         self.run_watcher = False
 
     def is_enabled(self, build_flags):
-        return bool(build_flags.get(COMPILE_FLAG))
+        if self.use_compile_flag == 'True' or self.use_compile_flag == 'true' or self.use_compile_flag == '1' or self.use_compile_flag == 'yes':
+            return bool(build_flags.get(COMPILE_FLAG))
+        else:
+            return True
 
     def find_dependencies(self, target):
         dependencies = [target]
