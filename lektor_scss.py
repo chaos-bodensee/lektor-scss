@@ -40,7 +40,7 @@ class scssPlugin(Plugin):
         self.run_watcher = False
 
     def is_enabled(self, build_flags):
-        if bool(self.use_compile_flag):
+        if self.use_compile_flag == 'True' or self.use_compile_flag == 'true' or self.use_compile_flag == '1' or self.use_compile_flag == 'yes':
             return bool(build_flags.get(COMPILE_FLAG))
         else:
             return True
